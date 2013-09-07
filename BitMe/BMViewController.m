@@ -9,7 +9,6 @@
 #import "BMViewController.h"
 
 @interface BMViewController ()
-
 @end
 
 @implementation BMViewController

@@ -163,6 +163,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="He6-3q-oeV" kind="modal" modalTransitionStyle="crossDissolve" id="IeX-7g-Reb"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Balance: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCe-EV-8XR">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -208,6 +211,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kva-IH-IuN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="195" y="592"/>
+        </scene>
+        <!--Address View Controller-->
+        <scene sceneID="dPz-s3-K9c">
+            <objects>
+                <viewController id="He6-3q-oeV" customClass="BMAddressViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0dj-3w-AeH">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="t64-9Z-aG4">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="141" id="2Qg-mf-aaY"/>
+                                </constraints>
+                                <string key="text">Use your favorite BitCoin service to transfer credit to the following address. These funds will then be available for transfers between you and others within the app:</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nCG-QU-w0a">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="hXu-9s-ujH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="t64-9Z-aG4" firstAttribute="top" secondItem="0dj-3w-AeH" secondAttribute="top" constant="81" id="7bb-21-HNT"/>
+                            <constraint firstItem="nCG-QU-w0a" firstAttribute="leading" secondItem="0dj-3w-AeH" secondAttribute="leading" type="default" id="9Nd-gW-4oc"/>
+                            <constraint firstItem="nCG-QU-w0a" firstAttribute="trailing" secondItem="0dj-3w-AeH" secondAttribute="trailing" type="default" id="T3x-MY-yCQ"/>
+                            <constraint firstItem="t64-9Z-aG4" firstAttribute="leading" secondItem="0dj-3w-AeH" secondAttribute="leading" type="default" id="hGt-Qi-7IE"/>
+                            <constraint firstAttribute="bottom" secondItem="nCG-QU-w0a" secondAttribute="bottom" constant="189" id="kJv-zD-uvv"/>
+                            <constraint firstItem="t64-9Z-aG4" firstAttribute="trailing" secondItem="0dj-3w-AeH" secondAttribute="trailing" type="default" id="l5Z-dr-fMw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="myAddress" destination="nCG-QU-w0a" id="RGg-2Z-xu3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oGc-cc-jcg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="894"/>
         </scene>
         <!--Send View Controller - Transaction-->
         <scene sceneID="tWa-Z8-s9a">
@@ -281,7 +328,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aue-Xs-ADt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="592"/>
+            <point key="canvasLocation" x="750" y="284"/>
         </scene>
         <!--Sign Up View Controller - Sign Up-->
         <scene sceneID="Vlr-Tr-iqt">
@@ -376,6 +423,49 @@
             <point key="canvasLocation" x="750" y="-295"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="BMAddressViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BMAddressViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="myAddress" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="BMLoginViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BMLoginViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="logIn:"/>
+                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="userName" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="BMMainViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BMMainViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="balance" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="myUID" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="BMSendViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BMSendViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="send:"/>
+                <relationship kind="outlet" name="UID" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="amount" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="BMSignUpViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BMSignUpViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="signUp:"/>
+                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="password_verify" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="userName" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
