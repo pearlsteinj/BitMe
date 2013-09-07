@@ -13,7 +13,7 @@
 @end
 
 @implementation BMSendViewController
-
+@synthesize UID,amount;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -35,4 +35,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)send:(id)sender {
+    
+}
 @end

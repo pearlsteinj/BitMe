@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface BMSendViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UITextField *UID;
+@property (strong, nonatomic) IBOutlet UITextField *amount;
 
+- (IBAction)send:(id)sender;
 @end
