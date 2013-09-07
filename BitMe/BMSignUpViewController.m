@@ -72,10 +72,11 @@
                               
                               NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
                               
-                              new_user = [new_user childByAppendingPath:@"address"];
-                              [new_user setValue:[dict objectForKey:@"address"]];
-                              
-                              [self dismissViewControllerAnimated:YES completion:nil];
+                              Firebase *address = [new_user childByAppendingPath:@"address"];
+                              [address setValue:[dict objectForKey:@"address"]];
+                              Firebase *old_amount = [new_user childByAppendingPath:@"old_amount"];
+                              [old_amount setValue:@"0"];
+                            [self dismissViewControllerAnimated:YES completion:nil];
                               
                         }
                       }];

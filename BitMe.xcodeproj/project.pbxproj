@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0395DF0717DBA14B00E38022 /* BMCashOutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0395DF0617DBA14B00E38022 /* BMCashOutViewController.m */; };
 		0399F54E17DADDE4006CB8E9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0399F54D17DADDE4006CB8E9 /* UIKit.framework */; };
 		0399F55017DADDE4006CB8E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0399F54F17DADDE4006CB8E9 /* Foundation.framework */; };
 		0399F55217DADDE4006CB8E9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0399F55117DADDE4006CB8E9 /* CoreGraphics.framework */; };
@@ -33,6 +34,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0395DF0517DBA14B00E38022 /* BMCashOutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMCashOutViewController.h; sourceTree = "<group>"; };
+		0395DF0617DBA14B00E38022 /* BMCashOutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMCashOutViewController.m; sourceTree = "<group>"; };
 		0399F54A17DADDE4006CB8E9 /* BitMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0399F54D17DADDE4006CB8E9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0399F54F17DADDE4006CB8E9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -174,6 +177,8 @@
 		0399F58617DAE3E3006CB8E9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0395DF0517DBA14B00E38022 /* BMCashOutViewController.h */,
+				0395DF0617DBA14B00E38022 /* BMCashOutViewController.m */,
 				0399F58717DAE43D006CB8E9 /* BMMainViewController.h */,
 				0399F58817DAE43D006CB8E9 /* BMMainViewController.m */,
 				0399F58A17DB0C0A006CB8E9 /* BMSendViewController.h */,
@@ -258,6 +263,7 @@
 				0399F58917DAE43D006CB8E9 /* BMMainViewController.m in Sources */,
 				0399F58C17DB0C0A006CB8E9 /* BMSendViewController.m in Sources */,
 				58D96A0517DB6032003A6108 /* BMAddressViewController.m in Sources */,
+				0395DF0717DBA14B00E38022 /* BMCashOutViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
