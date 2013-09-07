@@ -86,6 +86,7 @@
                             <constraint firstItem="IR7-ne-ZfP" firstAttribute="baseline" secondItem="Li4-hT-E6a" secondAttribute="baseline" type="default" id="tMJ-Vu-N23"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="oib-MP-Ow2"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="password" destination="i7a-wa-mv3" id="QOc-IH-BRQ"/>
@@ -123,7 +124,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KKk-Vl-6vZ">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="Xr9-YV-dKk"/>
+                                    <constraint firstAttribute="height" constant="34" type="user" id="Xr9-YV-dKk"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Begin Transaction">
@@ -139,7 +140,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Mi-iE-Ycq">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="bAz-M9-WZj"/>
+                                    <constraint firstAttribute="height" constant="34" type="user" id="bAz-M9-WZj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Withdraw Funds">
@@ -182,13 +183,13 @@
                             <constraint firstItem="YDI-JF-9gn" firstAttribute="leading" secondItem="pXQ-SW-lUO" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="3hA-6k-VLJ"/>
                             <constraint firstAttribute="trailing" secondItem="1yp-RY-aVy" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="9hw-nb-HL7"/>
                             <constraint firstItem="5Mi-iE-Ycq" firstAttribute="leading" secondItem="pXQ-SW-lUO" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="BXB-yb-X7a"/>
-                            <constraint firstAttribute="bottom" secondItem="KKk-Vl-6vZ" secondAttribute="bottom" constant="142" id="CZj-6q-vdf"/>
+                            <constraint firstItem="5Mi-iE-Ycq" firstAttribute="top" secondItem="pXQ-SW-lUO" secondAttribute="top" constant="191" type="user" id="MuH-qG-GvO"/>
+                            <constraint firstItem="KKk-Vl-6vZ" firstAttribute="top" secondItem="pXQ-SW-lUO" secondAttribute="top" constant="240" type="user" id="OWI-9z-iqG"/>
                             <constraint firstAttribute="trailing" secondItem="xaO-73-J7U" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="PCn-qd-bgP"/>
                             <constraint firstAttribute="trailing" secondItem="g8d-pJ-f3u" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="SXl-uB-Zec"/>
                             <constraint firstAttribute="trailing" secondItem="KKk-Vl-6vZ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="SiY-n4-vRw"/>
                             <constraint firstItem="YDI-JF-9gn" firstAttribute="top" secondItem="pXQ-SW-lUO" secondAttribute="top" constant="81" id="YI7-qd-TXv"/>
                             <constraint firstItem="QCe-EV-8XR" firstAttribute="top" secondItem="pXQ-SW-lUO" secondAttribute="top" constant="30" id="bZH-nU-6Mp"/>
-                            <constraint firstItem="5Mi-iE-Ycq" firstAttribute="centerY" secondItem="pXQ-SW-lUO" secondAttribute="centerY" type="default" id="dcS-Dd-cQ9"/>
                             <constraint firstItem="xaO-73-J7U" firstAttribute="leading" secondItem="pXQ-SW-lUO" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="hqX-bk-kOS"/>
                             <constraint firstAttribute="trailing" secondItem="5Mi-iE-Ycq" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="jkA-6I-xU0"/>
                             <constraint firstItem="g8d-pJ-f3u" firstAttribute="top" secondItem="pXQ-SW-lUO" secondAttribute="top" constant="20" symbolic="YES" type="default" id="pyO-Yv-bgh"/>
@@ -375,43 +376,6 @@
             <point key="canvasLocation" x="750" y="-295"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="BMLoginViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BMLoginViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="logIn:"/>
-                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="userName" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="BMMainViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BMMainViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="balance" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="myUID" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="BMSendViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BMSendViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="send:"/>
-                <relationship kind="outlet" name="UID" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="amount" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="BMSignUpViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/BMSignUpViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="signUp:"/>
-                <relationship kind="outlet" name="password" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="password_verify" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="userName" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

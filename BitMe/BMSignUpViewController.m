@@ -25,6 +25,7 @@
 
 - (void)viewDidLoad
 {
+    
     [super viewDidLoad];
     
     //Initialize Firebase
@@ -57,8 +58,26 @@
                               Firebase *lookup = [fire childByAppendingPath:@"lookup"];
                               Firebase *new_entry = [lookup childByAppendingPath:user.userId];
                               [new_entry setValue:[NSString stringWithFormat:@"%u",UID]];
+                              
+                              
+                              NSURLRequest *theRequest=[NSURLRequest requestWithURL:[NSURL URLWithString:[@"https://blockchain.info/merchant/0eb0d1fc-30fd-4138-80d4-984f9b6b7438/new_address?password=walletBlock&label=" stringByAppendingString:[NSString stringWithFormat:@"%d",UID]]]
+                                                                        cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                                    timeoutInterval:60.0];
+                              
+                              // create the connection with the request
+                              // and start loading the data
+                              NSURLConnection *theConnection=[[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
+                              NSURLResponse* response = nil;
+                              NSData* data = [NSURLConnection sendSynchronousRequest:theRequest returningResponse:&response error:nil];
+                              
+                              NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                              
+                              new_user = [new_user childByAppendingPath:@"address"];
+                              [new_user setValue:[dict objectForKey:@"address"]];
+                              
                               [self dismissViewControllerAnimated:YES completion:nil];
-                          }
+                              
+                        }
                       }];
     }
     else{
@@ -66,6 +85,7 @@
         [alert show];
     }
 }
+
 -(unsigned int)generateUID{
     unsigned int UID = (arc4random()%999999)+1;
     return UID;
