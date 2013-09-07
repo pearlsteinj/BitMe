@@ -7,7 +7,7 @@
 //
 
 #import "BMSendViewController.h"
-
+#import "UAPush.h"
 @interface BMSendViewController ()
 
 @end
@@ -37,14 +37,10 @@
 }
 
 - (IBAction)send:(id)sender {
-    
-    
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     NSString *user = [prefs objectForKey:@"UID"];
     NSString *url = @"https://bitme.firebaseIO.com/users";
     Firebase* lookup = [[Firebase alloc] initWithUrl:url];
-    
-    
     [lookup observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         NSString *priorBalance = [[snapshot.value objectForKey:user] objectForKey:@"balance"];
         if ([priorBalance floatValue] < [amount.text floatValue]){
@@ -65,5 +61,8 @@
     
 }
 
+-(void)sendPush{
+
+}
 
 @end

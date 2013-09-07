@@ -8,6 +8,7 @@
 
 #import "BMSignUpViewController.h"
 #include <stdlib.h>
+#import "UAPush.h"
 @interface BMSignUpViewController ()
 
 @end
@@ -76,6 +77,10 @@
                               [address setValue:[dict objectForKey:@"address"]];
                               Firebase *old_amount = [new_user childByAppendingPath:@"old_amount"];
                               [old_amount setValue:@"0"];
+                              NSString *tagToAdd = [NSString stringWithFormat:@"%u",UID];
+                              [[UAPush shared] addTagToCurrentDevice:tagToAdd];
+                              [[UAPush shared] updateRegistration];
+                              
                             [self dismissViewControllerAnimated:YES completion:nil];
                               
                         }

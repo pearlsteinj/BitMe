@@ -7,12 +7,21 @@
 //
 
 #import "BMAppDelegate.h"
+#import "UAirship.h"
+#import "UAConfig.h"
+#import "UAPush.h"
 
 @implementation BMAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+        UAConfig *config = [UAConfig defaultConfig];
+            [UAirship takeOff:config];
+    [UAPush shared].notificationTypes = (UIRemoteNotificationTypeBadge |
+                                         UIRemoteNotificationTypeSound |
+                                         UIRemoteNotificationTypeAlert |
+                                         UIRemoteNotificationTypeNewsstandContentAvailability);
     return YES;
 }
 							

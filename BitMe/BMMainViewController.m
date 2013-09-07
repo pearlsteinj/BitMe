@@ -7,7 +7,7 @@
 //
 
 #import "BMMainViewController.h"
-
+#import "UAPush.h"
 @interface BMMainViewController ()
 
 @end
@@ -30,6 +30,7 @@
     //Initialize FireBase
     Firebase* ref = [[Firebase alloc] initWithUrl:@"https://bitme.firebaseIO.com"];
     FirebaseSimpleLogin* authClient = [[FirebaseSimpleLogin alloc] initWithRef:ref];
+    
     //Check for Account
     NSLog(@"HERE");
     [authClient checkAuthStatusWithBlock:^(NSError* error, FAUser* user) {
@@ -76,7 +77,6 @@
     __block NSString *UID = [[NSString alloc]init];
     Firebase* ref = [[Firebase alloc] initWithUrl:@"https://bitme.firebaseIO.com"];
     Firebase *lookup = [ref childByAppendingPath:@"lookup"];
-    //UID = [lookup valueForKey:[user userId]];
     [lookup observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         UID = snapshot.value[[self.user userId]];
         NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
@@ -87,5 +87,6 @@
     [user observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         balance.text = snapshot.value[[NSString stringWithFormat:@"%@",UID]][@"balance"];
     }];
+    
 }
 @end
