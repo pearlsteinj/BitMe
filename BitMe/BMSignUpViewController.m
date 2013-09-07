@@ -62,7 +62,8 @@
                       }];
     }
     else{
-        NSLog(@"The user's a dumbass...");
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Oops" message:@"Password fields aren't the same!" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alert show];
     }
 }
 -(unsigned int)generateUID{
