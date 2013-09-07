@@ -7,6 +7,14 @@
 //
 
 #import "BMCashOutViewController.h"
+#import "ZBarSDK.h"
+#import <UIKit/UIKit.h>
+#import <MobileCoreServices/UTCoreTypes.h>
+#import <ImageIO/ImageIO.h>
+#import <AssetsLibrary/ALAsset.h>
+#import <AssetsLibrary/ALAssetRepresentation.h>
+#import <ImageIO/CGImageSource.h>
+#import <ImageIO/CGImageProperties.h>
 
 @interface BMCashOutViewController ()
 
@@ -36,6 +44,135 @@
         NSLog(@"%@",available_balance);
         available.text = available_balance;
     }];
+}
+
+- (void) imagePickerControllerDidCancel: (UIImagePickerController *) picker {
+    
+    [picker dismissViewControllerAnimated:NO completion:nil];
+    //self. tabBarController.selectedViewController = 10;
+}
+
+- (void) imagePickerController: (UIImagePickerController *) picker
+
+ didFinishPickingMediaWithInfo: (NSDictionary *) info {
+    
+    
+    
+    NSString *mediaType = [info objectForKey: UIImagePickerControllerMediaType];
+    
+    UIImage *originalImage, *editedImage, *imageToSave;
+    
+    
+    
+    // Handle a still image capture
+    
+    if (CFStringCompare ((CFStringRef) mediaType, kUTTypeImage, 0)
+        
+        == kCFCompareEqualTo) {
+        
+        
+        
+        editedImage = (UIImage *) [info objectForKey:
+                                   
+                                   UIImagePickerControllerEditedImage];
+        
+        originalImage = (UIImage *) [info objectForKey:
+                                     
+                                     UIImagePickerControllerOriginalImage];
+        
+        
+        
+        if (editedImage) {
+            
+            imageToSave = editedImage;
+            
+        } else {
+            
+            imageToSave = originalImage;
+            
+        }
+        
+        
+        
+    }
+    
+    
+    ZBarReaderController *reader = [ZBarReaderController new];
+    reader.readerDelegate = self;
+    
+    //... code to get image
+    
+    CGImageRef imgCG = imageToSave.CGImage;
+    
+    id<NSFastEnumeration> results = [reader scanImage:imgCG];
+    ZBarSymbol *symbol = nil;
+    
+    for(symbol in results)
+        // EXAMPLE: just grab the first barcode
+        break;
+    _address.text = symbol.data;
+    
+    
+    [picker dismissModalViewControllerAnimated: YES];
+    
+    
+}
+
+
+
+-(IBAction)takePicture:(id)sender{
+    [self startCameraControllerFromViewController:self usingDelegate:self];
+}
+
+
+- (BOOL) startCameraControllerFromViewController: (UIViewController*) controller
+
+                                   usingDelegate: (id <UIImagePickerControllerDelegate,
+                                                   
+                                                   UINavigationControllerDelegate>) delegate {
+    
+    
+    
+    if (([UIImagePickerController isSourceTypeAvailable:
+          
+          UIImagePickerControllerSourceTypeCamera] == NO)
+        
+        || (delegate == nil)
+        
+        || (controller == nil))
+        
+        return NO;
+    
+    
+    
+    
+    
+    UIImagePickerController *cameraUI = [[UIImagePickerController alloc] init];
+    
+    cameraUI.sourceType = UIImagePickerControllerSourceTypeCamera;
+    
+    
+    
+    // Displays a control that allows the user to choose picture or
+    
+    // movie capture, if both are available:
+    
+    
+    cameraUI.mediaTypes = [[NSArray alloc] initWithObjects: (NSString *) kUTTypeImage, nil];
+    
+    // Hides the controls for moving & scaling pictures, or for
+    
+    // trimming movies. To instead show the controls, use YES.
+    
+    cameraUI.allowsEditing = NO;
+    
+    cameraUI.delegate = delegate;
+    
+    
+    [controller presentModalViewController: cameraUI animated: YES];
+    
+    return YES;
+    
 }
 
 - (void)didReceiveMemoryWarning

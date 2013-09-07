@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0399F54917DADDE4006CB8E9"
                BuildableName = "BitMe.app"
-               BlueprintName = "BitMe"
-               ReferencedContainer = "container:BitMe.xcodeproj">
+               BlueprintName = "sig"
+               ReferencedContainer = "container:sig.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0399F54917DADDE4006CB8E9"
             BuildableName = "BitMe.app"
-            BlueprintName = "BitMe"
-            ReferencedContainer = "container:BitMe.xcodeproj">
+            BlueprintName = "sig"
+            ReferencedContainer = "container:sig.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -53,8 +53,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0399F54917DADDE4006CB8E9"
             BuildableName = "BitMe.app"
-            BlueprintName = "BitMe"
-            ReferencedContainer = "container:BitMe.xcodeproj">
+            BlueprintName = "sig"
+            ReferencedContainer = "container:sig.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -71,8 +71,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0399F54917DADDE4006CB8E9"
             BuildableName = "BitMe.app"
-            BlueprintName = "BitMe"
-            ReferencedContainer = "container:BitMe.xcodeproj">
+            BlueprintName = "sig"
+            ReferencedContainer = "container:sig.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

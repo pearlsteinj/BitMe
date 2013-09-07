@@ -398,11 +398,25 @@
                                     <action selector="cashOut:" destination="iaE-Io-Rdw" eventType="touchUpInside" id="6hv-gb-ZZw"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTt-Wv-9d9">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Or scan a valid barcode">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="takePicture:" destination="iaE-Io-Rdw" eventType="touchUpInside" id="nOH-JS-2sw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="cFF-oZ-KzZ" firstAttribute="leading" secondItem="U8y-GH-IXd" secondAttribute="leading" type="default" id="1YB-jA-wxl"/>
                             <constraint firstItem="Zjm-Hr-alp" firstAttribute="top" secondItem="7Ex-gd-zdI" secondAttribute="top" constant="204" id="5gy-yL-8z3"/>
+                            <constraint firstItem="JUW-9f-krD" firstAttribute="leading" secondItem="7Ex-gd-zdI" secondAttribute="leading" constant="105" id="ER2-UZ-FgY"/>
                             <constraint firstItem="Zjm-Hr-alp" firstAttribute="centerX" secondItem="U8y-GH-IXd" secondAttribute="centerX" type="default" id="EUD-aU-tvA"/>
                             <constraint firstItem="U8y-GH-IXd" firstAttribute="top" secondItem="JUW-9f-krD" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="GVB-KM-YgR"/>
                             <constraint firstItem="U8y-GH-IXd" firstAttribute="leading" secondItem="eT3-i6-LNE" secondAttribute="leading" type="default" id="M6n-bl-fE2"/>
@@ -410,14 +424,16 @@
                             <constraint firstItem="ofk-dl-h9d" firstAttribute="leading" secondItem="7Ex-gd-zdI" secondAttribute="leading" constant="12" id="Mgq-3i-ygW"/>
                             <constraint firstItem="3Ld-Eg-PGd" firstAttribute="top" secondItem="7Ex-gd-zdI" secondAttribute="top" constant="20" symbolic="YES" type="default" id="NzI-ec-Ebq"/>
                             <constraint firstItem="JUW-9f-krD" firstAttribute="top" secondItem="7Ex-gd-zdI" secondAttribute="top" constant="84" id="T3R-i1-bNu"/>
-                            <constraint firstItem="Zjm-Hr-alp" firstAttribute="centerX" secondItem="7Ex-gd-zdI" secondAttribute="centerX" type="default" id="TuC-qk-3mw"/>
                             <constraint firstItem="ofk-dl-h9d" firstAttribute="top" secondItem="7Ex-gd-zdI" secondAttribute="top" constant="13" id="V6G-ww-Wed"/>
                             <constraint firstItem="eT3-i6-LNE" firstAttribute="top" secondItem="ofk-dl-h9d" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Wh2-2C-W0X"/>
-                            <constraint firstItem="JUW-9f-krD" firstAttribute="leading" secondItem="7Ex-gd-zdI" secondAttribute="leading" constant="105" id="ZzH-4P-eWm"/>
+                            <constraint firstAttribute="trailing" secondItem="BTt-Wv-9d9" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Whe-Jn-h1P"/>
+                            <constraint firstAttribute="bottom" secondItem="BTt-Wv-9d9" secondAttribute="bottom" constant="137" id="b3A-Be-z8v"/>
                             <constraint firstItem="76n-H6-9ck" firstAttribute="top" secondItem="U8y-GH-IXd" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="eEm-Oj-fwo"/>
                             <constraint firstAttribute="trailing" secondItem="3Ld-Eg-PGd" secondAttribute="trailing" constant="61" id="iJ7-hX-DUE"/>
                             <constraint firstItem="U8y-GH-IXd" firstAttribute="trailing" secondItem="eT3-i6-LNE" secondAttribute="trailing" type="default" id="qHZ-WK-xzz"/>
                             <constraint firstItem="cFF-oZ-KzZ" firstAttribute="top" secondItem="76n-H6-9ck" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="tJ7-bk-Uif"/>
+                            <constraint firstItem="cFF-oZ-KzZ" firstAttribute="leading" secondItem="BTt-Wv-9d9" secondAttribute="leading" type="default" id="uui-IY-NMd"/>
+                            <constraint firstItem="U8y-GH-IXd" firstAttribute="centerX" secondItem="7Ex-gd-zdI" secondAttribute="centerX" type="default" id="w7O-zb-aL7"/>
                         </constraints>
                     </view>
                     <connections>
@@ -630,6 +646,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BMCashOutViewController.h"/>
             <relationships>
                 <relationship kind="action" name="cashOut:"/>
+                <relationship kind="action" name="takePicture:"/>
                 <relationship kind="outlet" name="address" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="amount" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="available" candidateClass="UILabel"/>

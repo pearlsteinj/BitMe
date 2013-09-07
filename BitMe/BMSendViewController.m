@@ -47,7 +47,7 @@
     
     [lookup observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         NSString *priorBalance = [[snapshot.value objectForKey:user] objectForKey:@"balance"];
-        if ([priorBalance integerValue] < [amount.text integerValue]){
+        if ([priorBalance floatValue] < [amount.text floatValue]){
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Uh-Oh" message:@"You is poor :(" delegate:self cancelButtonTitle:@"I'm a beggar beholden" otherButtonTitles:nil];
             [alert show];
         }
@@ -58,8 +58,8 @@
         else{
             // All my code could look more like below
             // Sorry for the scrappy work
-            [[[lookup childByAppendingPath:user] childByAppendingPath:@"balance" ] setValue:[NSString stringWithFormat:@"%i", ([priorBalance integerValue] - [amount.text integerValue])]];
-            [[[lookup childByAppendingPath:UID.text] childByAppendingPath:@"balance" ] setValue:[NSString stringWithFormat:@"%i", ([[[snapshot.value objectForKey:UID.text] objectForKey:@"balance"] integerValue] + [amount.text integerValue])]];
+            [[[lookup childByAppendingPath:user] childByAppendingPath:@"balance" ] setValue:[NSString stringWithFormat:@"%f", ([priorBalance floatValue] - [amount.text floatValue])]];
+            [[[lookup childByAppendingPath:UID.text] childByAppendingPath:@"balance" ] setValue:[NSString stringWithFormat:@"%f", ([[[snapshot.value objectForKey:UID.text] objectForKey:@"balance"] floatValue] + [amount.text floatValue])]];
         }
     }];
     
