@@ -28,6 +28,7 @@
 		0399F58317DAE27B006CB8E9 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0399F58217DAE27B006CB8E9 /* Social.framework */; };
 		0399F58517DAE281006CB8E9 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0399F58417DAE281006CB8E9 /* Accounts.framework */; };
 		0399F58917DAE43D006CB8E9 /* BMMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0399F58817DAE43D006CB8E9 /* BMMainViewController.m */; };
+		0399F58C17DB0C0A006CB8E9 /* BMSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0399F58B17DB0C0A006CB8E9 /* BMSendViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,8 @@
 		0399F58417DAE281006CB8E9 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		0399F58717DAE43D006CB8E9 /* BMMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMMainViewController.h; sourceTree = "<group>"; };
 		0399F58817DAE43D006CB8E9 /* BMMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMMainViewController.m; sourceTree = "<group>"; };
+		0399F58A17DB0C0A006CB8E9 /* BMSendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMSendViewController.h; sourceTree = "<group>"; };
+		0399F58B17DB0C0A006CB8E9 /* BMSendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMSendViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +173,8 @@
 			children = (
 				0399F58717DAE43D006CB8E9 /* BMMainViewController.h */,
 				0399F58817DAE43D006CB8E9 /* BMMainViewController.m */,
+				0399F58A17DB0C0A006CB8E9 /* BMSendViewController.h */,
+				0399F58B17DB0C0A006CB8E9 /* BMSendViewController.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -246,6 +251,7 @@
 				0399F57517DADE96006CB8E9 /* BMLoginViewController.m in Sources */,
 				0399F57F17DAE0C6006CB8E9 /* BMSignUpViewController.m in Sources */,
 				0399F58917DAE43D006CB8E9 /* BMMainViewController.m in Sources */,
+				0399F58C17DB0C0A006CB8E9 /* BMSendViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

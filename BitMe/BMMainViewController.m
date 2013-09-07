@@ -13,7 +13,7 @@
 @end
 
 @implementation BMMainViewController
-
+@synthesize balance;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -30,6 +30,7 @@
     Firebase* ref = [[Firebase alloc] initWithUrl:@"https://bitme.firebaseIO.com"];
     FirebaseSimpleLogin* authClient = [[FirebaseSimpleLogin alloc] initWithRef:ref];
     //Check for Account
+    __block NSString *UID = @"";
     [authClient checkAuthStatusWithBlock:^(NSError* error, FAUser* user) {
         if (error != nil) {
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Uh-Oh" message:@"Something Bad Happened :(" delegate:self cancelButtonTitle:@"Ok!!! I forgive you" otherButtonTitles:nil];
@@ -37,13 +38,18 @@
             
         } else if (user == nil) {
             [self performSegueWithIdentifier:@"logIn" sender:self];        
-        } else {
-            
+        }
+        else{
+            Firebase *lookup = [ref childByAppendingPath:[NSString stringWithFormat:@"lookup"]];
+                                 UID = [lookup valueForKey:[user email]];
+            [lookup observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+                UID = snapshot.value;
+            }];
         }
     }];
+    Firebase *user = [ref childByAppendingPath:UID];
+    balance.text = [user valueForKey:@"balance"];
     
-    
-
 }
 
 - (void)didReceiveMemoryWarning

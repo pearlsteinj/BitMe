@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface BMMainViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UILabel *balance;
 
 @end
