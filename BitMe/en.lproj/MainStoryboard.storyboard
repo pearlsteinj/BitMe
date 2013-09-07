@@ -101,7 +101,7 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8d-pJ-f3u">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8d-pJ-f3u">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="UKq-t6-GX5"/>
                                     <constraint firstAttribute="width" constant="114" id="jfQ-vl-xye"/>
@@ -123,9 +123,16 @@
                                     <segue destination="s8L-px-uST" kind="modal" modalTransitionStyle="crossDissolve" id="GRQ-r1-H75"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Balance: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCe-EV-8XR">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="QCe-EV-8XR" firstAttribute="leading" secondItem="pXQ-SW-lUO" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="1fo-WX-qhe"/>
+                            <constraint firstItem="QCe-EV-8XR" firstAttribute="top" secondItem="pXQ-SW-lUO" secondAttribute="top" constant="86" id="MmQ-nm-792"/>
                             <constraint firstItem="g8d-pJ-f3u" firstAttribute="leading" secondItem="pXQ-SW-lUO" secondAttribute="leading" constant="110" id="Pmk-HG-Lg5"/>
                             <constraint firstItem="g8d-pJ-f3u" firstAttribute="top" secondItem="pXQ-SW-lUO" secondAttribute="top" constant="76" id="pP8-4t-ne7"/>
                             <constraint firstItem="KKk-Vl-6vZ" firstAttribute="leading" secondItem="g8d-pJ-f3u" secondAttribute="leading" type="default" id="uX1-sI-ifr"/>

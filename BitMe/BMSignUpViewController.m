@@ -53,10 +53,10 @@
                               unsigned int UID = [self generateUID];
                               Firebase *new_user = [users childByAppendingPath:[NSString stringWithFormat:@"%u",UID]];
                               Firebase *balance = [new_user childByAppendingPath:@"balance"];
-                              [balance setValue:@"0" forKey:@"balance"];
+                              [balance setValue:@"0"];
                               Firebase *lookup = [fire childByAppendingPath:@"lookup"];
                               Firebase *new_entry = [lookup childByAppendingPath:user.userId];
-                              [new_entry setValue:[NSString stringWithFormat:@"%u",UID] forKey:[user userId]];
+                              [new_entry setValue:[NSString stringWithFormat:@"%u",UID]];
                               [self dismissViewControllerAnimated:YES completion:nil];
                           }
                       }];

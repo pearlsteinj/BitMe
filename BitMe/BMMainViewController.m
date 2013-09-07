@@ -44,10 +44,12 @@
             Firebase *lookup = [ref childByAppendingPath:@"lookup"];
             //UID = [lookup valueForKey:[user userId]];
             [lookup observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-                NSLog(@"%@",snapshot.value);
+                UID = snapshot.value[[user userId]];
             }];
-            Firebase *user = [ref childByAppendingPath:[NSString stringWithFormat:@"users/%@",UID]];
-            balance.text = [user valueForKey:@"balance"];
+            Firebase *user = [ref childByAppendingPath:@"users"];
+            [user observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+                balance.text = snapshot.value[[NSString stringWithFormat:@"%@",UID]][@"balance"];
+            }];
         }
     }];
 
