@@ -13,4 +13,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *amount;
 
 - (IBAction)send:(id)sender;
+@property (nonatomic, retain) FAUser *user;
+
+
 @end

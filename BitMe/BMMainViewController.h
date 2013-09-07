@@ -11,4 +11,6 @@
 @interface BMMainViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UILabel *balance;
 @property (nonatomic, retain) FAUser *user;
+@property (weak, nonatomic) IBOutlet UILabel *myUID;
+
 @end

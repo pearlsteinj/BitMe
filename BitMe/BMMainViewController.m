@@ -13,7 +13,8 @@
 @end
 
 @implementation BMMainViewController
-@synthesize balance;
+@synthesize balance, myUID;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -52,7 +53,6 @@
     Firebase* ref = [[Firebase alloc] initWithUrl:@"https://bitme.firebaseIO.com"];
     FirebaseSimpleLogin* authClient = [[FirebaseSimpleLogin alloc] initWithRef:ref];
     //Check for Account
-    NSLog(@"HERE");
     [authClient checkAuthStatusWithBlock:^(NSError* error, FAUser* user) {
         if (error != nil) {
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Uh-Oh" message:@"Something Bad Happened :(" delegate:self cancelButtonTitle:@"Ok!!! I forgive you" otherButtonTitles:nil];
@@ -79,6 +79,9 @@
     //UID = [lookup valueForKey:[user userId]];
     [lookup observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         UID = snapshot.value[[self.user userId]];
+        NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+        [myUID setText:UID];
+        [prefs setObject:UID forKey:@"UID"];
     }];
     Firebase *user = [ref childByAppendingPath:@"users"];
     [user observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
