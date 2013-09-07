@@ -53,10 +53,10 @@
                               unsigned int UID = [self generateUID];
                               Firebase *new_user = [users childByAppendingPath:[NSString stringWithFormat:@"%u",UID]];
                               Firebase *balance = [new_user childByAppendingPath:@"balance"];
-                              [balance setValue:@"0"];
+                              [balance setValue:@"0" forKey:@"balance"];
                               Firebase *lookup = [fire childByAppendingPath:@"lookup"];
-                              Firebase *new_entry = [lookup childByAppendingPath:[NSString stringWithFormat:@"%u",UID]];
-                              [new_entry setValue:[user email]];
+                              Firebase *new_entry = [lookup childByAppendingPath:user.userId];
+                              [new_entry setValue:[NSString stringWithFormat:@"%u",UID] forKey:[user userId]];
                               [self dismissViewControllerAnimated:YES completion:nil];
                           }
                       }];
@@ -68,7 +68,6 @@
 }
 -(unsigned int)generateUID{
     unsigned int UID = (arc4random()%999999)+1;
-    NSLog(@"%uf",UID);
     return UID;
 }
 

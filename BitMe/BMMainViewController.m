@@ -29,8 +29,9 @@
     //Initialize FireBase
     Firebase* ref = [[Firebase alloc] initWithUrl:@"https://bitme.firebaseIO.com"];
     FirebaseSimpleLogin* authClient = [[FirebaseSimpleLogin alloc] initWithRef:ref];
+    __block NSString *UID = [[NSString alloc]init];
     //Check for Account
-    __block NSString *UID = @"";
+    NSLog(@"HERE");
     [authClient checkAuthStatusWithBlock:^(NSError* error, FAUser* user) {
         if (error != nil) {
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Uh-Oh" message:@"Something Bad Happened :(" delegate:self cancelButtonTitle:@"Ok!!! I forgive you" otherButtonTitles:nil];
@@ -40,15 +41,16 @@
             [self performSegueWithIdentifier:@"logIn" sender:self];        
         }
         else{
-            Firebase *lookup = [ref childByAppendingPath:[NSString stringWithFormat:@"lookup"]];
-                                 UID = [lookup valueForKey:[user email]];
+            Firebase *lookup = [ref childByAppendingPath:@"lookup"];
+            //UID = [lookup valueForKey:[user userId]];
             [lookup observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-                UID = snapshot.value;
+                NSLog(@"%@",snapshot.value);
             }];
+            Firebase *user = [ref childByAppendingPath:[NSString stringWithFormat:@"users/%@",UID]];
+            balance.text = [user valueForKey:@"balance"];
         }
     }];
-    Firebase *user = [ref childByAppendingPath:UID];
-    balance.text = [user valueForKey:@"balance"];
+
     
 }
 
