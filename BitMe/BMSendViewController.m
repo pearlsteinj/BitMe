@@ -58,8 +58,11 @@
             [[[lookup childByAppendingPath:UID.text] childByAppendingPath:@"balance" ] setValue:[NSString stringWithFormat:@"%f", ([[[snapshot.value objectForKey:UID.text] objectForKey:@"balance"] floatValue] + [amount.text floatValue])]];
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             [self sendPush];
 =======
+=======
+>>>>>>> d2e19ce7d06deab04e8277ad84bf2a67e1162f43
 =======
 >>>>>>> d2e19ce7d06deab04e8277ad84bf2a67e1162f43
             
@@ -84,6 +87,9 @@
                 }
             }];
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> d2e19ce7d06deab04e8277ad84bf2a67e1162f43
+=======
 >>>>>>> d2e19ce7d06deab04e8277ad84bf2a67e1162f43
 =======
 >>>>>>> d2e19ce7d06deab04e8277ad84bf2a67e1162f43
@@ -92,6 +98,7 @@
 }
 
 -(void)sendPush{
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://go.urbanairship.com/api/push/"]];
@@ -142,6 +149,9 @@
         NSURLCredential * credential = [[NSURLCredential alloc] initWithUser:@"NGKir7QlSImvdr_wUNfpyA" password:@"kGHChRScQBS6lSEczqsIhA" persistence:NSURLCredentialPersistenceForSession];
         [[challenge sender] useCredential:credential forAuthenticationChallenge:challenge];
     }
+=======
+    
+>>>>>>> d2e19ce7d06deab04e8277ad84bf2a67e1162f43
 =======
     
 >>>>>>> d2e19ce7d06deab04e8277ad84bf2a67e1162f43
