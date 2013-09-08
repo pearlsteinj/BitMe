@@ -29,6 +29,13 @@
     
     [super viewDidLoad];
     
+    UIColor* mainColor = [UIColor colorWithRed:52.0/255 green:73.0/255 blue:100.0/255 alpha:1.0f];
+    
+    NSString* fontName = @"Avenir-Book";
+    NSString* boldFontName = @"Avenir-Black";
+    
+    self.view.backgroundColor = mainColor;
+    
     //Initialize Firebase
     Firebase* ref = [[Firebase alloc] initWithUrl:@"https://bitme.firebaseIO.com"];
     _authClient = [[FirebaseSimpleLogin alloc] initWithRef:ref];
@@ -78,9 +85,9 @@
                               Firebase *old_amount = [new_user childByAppendingPath:@"old_amount"];
                               [old_amount setValue:@"0"];
                               NSString *tagToAdd = [NSString stringWithFormat:@"%u",UID];
+                              
                               [[UAPush shared] addTagToCurrentDevice:tagToAdd];
                               [[UAPush shared] updateRegistration];
-                              
                             [self dismissViewControllerAnimated:YES completion:nil];
                               
                         }

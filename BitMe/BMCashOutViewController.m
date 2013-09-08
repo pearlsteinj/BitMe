@@ -34,6 +34,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    UIColor* mainColor = [UIColor colorWithRed:52.0/255 green:73.0/255 blue:100.0/255 alpha:1.0f];
+    UIColor* secondaryColor = [UIColor colorWithRed:22.0/255 green:160.0/255 blue:133.0/255 alpha:1.0f];
+    NSString* fontName = @"Avenir-Book";
+    NSString* boldFontName = @"Avenir-Black";
+    
+    self.view.backgroundColor = mainColor;
+    self.navigationController.navigationBar.tintColor = secondaryColor;
     
     Firebase* ref = [[Firebase alloc] initWithUrl:@"https://bitme.firebaseIO.com/users"];
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];

@@ -95,6 +95,15 @@
 		0399F58517DAE281006CB8E9 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0399F58417DAE281006CB8E9 /* Accounts.framework */; };
 		0399F58917DAE43D006CB8E9 /* BMMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0399F58817DAE43D006CB8E9 /* BMMainViewController.m */; };
 		0399F58C17DB0C0A006CB8E9 /* BMSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0399F58B17DB0C0A006CB8E9 /* BMSendViewController.m */; };
+		03C5EB5E17DC48560012EFAB /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C5EB5D17DC48560012EFAB /* logo.png */; };
+		03C5EB6017DC525D0012EFAB /* blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C5EB5F17DC525D0012EFAB /* blue.png */; };
+		03C5EB6517DC54A20012EFAB /* 190-bank.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C5EB6117DC54A20012EFAB /* 190-bank.png */; };
+		03C5EB6617DC54A20012EFAB /* 190-bank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C5EB6217DC54A20012EFAB /* 190-bank@2x.png */; };
+		03C5EB6717DC54A20012EFAB /* 192-credit-card.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C5EB6317DC54A20012EFAB /* 192-credit-card.png */; };
+		03C5EB6817DC54A20012EFAB /* 192-credit-card@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C5EB6417DC54A20012EFAB /* 192-credit-card@2x.png */; };
+		03C5EB6C17DC60AE0012EFAB /* BMLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5EB6B17DC60AE0012EFAB /* BMLogViewController.m */; };
+		03C5EB7017DC61260012EFAB /* BMContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5EB6F17DC61260012EFAB /* BMContactsViewController.m */; };
+		03C5EB7317DC623B0012EFAB /* BMAddContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5EB7217DC623B0012EFAB /* BMAddContactViewController.m */; };
 		03FD09FB17DBD45D009B6B86 /* BitMe.png in Resources */ = {isa = PBXBuildFile; fileRef = 03FD09FA17DBD45D009B6B86 /* BitMe.png */; };
 		58D96A0517DB6032003A6108 /* BMAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D96A0417DB6032003A6108 /* BMAddressViewController.m */; };
 		58D96A0717DBB806003A6108 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D96A0617DBB806003A6108 /* AVFoundation.framework */; };
@@ -284,6 +293,18 @@
 		0399F58817DAE43D006CB8E9 /* BMMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMMainViewController.m; sourceTree = "<group>"; };
 		0399F58A17DB0C0A006CB8E9 /* BMSendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMSendViewController.h; sourceTree = "<group>"; };
 		0399F58B17DB0C0A006CB8E9 /* BMSendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMSendViewController.m; sourceTree = "<group>"; };
+		03C5EB5D17DC48560012EFAB /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = ../../logo.png; sourceTree = "<group>"; };
+		03C5EB5F17DC525D0012EFAB /* blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blue.png; path = ../../blue.png; sourceTree = "<group>"; };
+		03C5EB6117DC54A20012EFAB /* 190-bank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "190-bank.png"; path = "../../190-bank.png"; sourceTree = "<group>"; };
+		03C5EB6217DC54A20012EFAB /* 190-bank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "190-bank@2x.png"; path = "../../190-bank@2x.png"; sourceTree = "<group>"; };
+		03C5EB6317DC54A20012EFAB /* 192-credit-card.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "192-credit-card.png"; path = "../../192-credit-card.png"; sourceTree = "<group>"; };
+		03C5EB6417DC54A20012EFAB /* 192-credit-card@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "192-credit-card@2x.png"; path = "../../192-credit-card@2x.png"; sourceTree = "<group>"; };
+		03C5EB6A17DC60AE0012EFAB /* BMLogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMLogViewController.h; sourceTree = "<group>"; };
+		03C5EB6B17DC60AE0012EFAB /* BMLogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMLogViewController.m; sourceTree = "<group>"; };
+		03C5EB6E17DC61260012EFAB /* BMContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMContactsViewController.h; sourceTree = "<group>"; };
+		03C5EB6F17DC61260012EFAB /* BMContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMContactsViewController.m; sourceTree = "<group>"; };
+		03C5EB7117DC623B0012EFAB /* BMAddContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMAddContactViewController.h; sourceTree = "<group>"; };
+		03C5EB7217DC623B0012EFAB /* BMAddContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMAddContactViewController.m; sourceTree = "<group>"; };
 		03FD09FA17DBD45D009B6B86 /* BitMe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BitMe.png; sourceTree = "<group>"; };
 		58D96A0317DB6032003A6108 /* BMAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMAddressViewController.h; sourceTree = "<group>"; };
 		58D96A0417DB6032003A6108 /* BMAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMAddressViewController.m; sourceTree = "<group>"; };
@@ -701,6 +722,7 @@
 		0399F55317DADDE4006CB8E9 /* BitMe */ = {
 			isa = PBXGroup;
 			children = (
+				03C5EB6917DC609A0012EFAB /* Log */,
 				0399F58617DAE3E3006CB8E9 /* Views */,
 				0399F57C17DAE0B4006CB8E9 /* SignUp */,
 				0399F57217DADE7A006CB8E9 /* Login */,
@@ -717,6 +739,12 @@
 		0399F55417DADDE4006CB8E9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				03C5EB6117DC54A20012EFAB /* 190-bank.png */,
+				03C5EB6217DC54A20012EFAB /* 190-bank@2x.png */,
+				03C5EB6317DC54A20012EFAB /* 192-credit-card.png */,
+				03C5EB6417DC54A20012EFAB /* 192-credit-card@2x.png */,
+				03C5EB5F17DC525D0012EFAB /* blue.png */,
+				03C5EB5D17DC48560012EFAB /* logo.png */,
 				0399F55517DADDE4006CB8E9 /* BitMe-Info.plist */,
 				0399F55617DADDE4006CB8E9 /* InfoPlist.strings */,
 				0399F55917DADDE4006CB8E9 /* main.m */,
@@ -750,6 +778,7 @@
 		0399F58617DAE3E3006CB8E9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				03C5EB6D17DC60C60012EFAB /* Contacts */,
 				0395DF0517DBA14B00E38022 /* BMCashOutViewController.h */,
 				0395DF0617DBA14B00E38022 /* BMCashOutViewController.m */,
 				0399F58717DAE43D006CB8E9 /* BMMainViewController.h */,
@@ -760,6 +789,26 @@
 				58D96A0417DB6032003A6108 /* BMAddressViewController.m */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		03C5EB6917DC609A0012EFAB /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				03C5EB6A17DC60AE0012EFAB /* BMLogViewController.h */,
+				03C5EB6B17DC60AE0012EFAB /* BMLogViewController.m */,
+			);
+			name = Log;
+			sourceTree = "<group>";
+		};
+		03C5EB6D17DC60C60012EFAB /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				03C5EB6E17DC61260012EFAB /* BMContactsViewController.h */,
+				03C5EB6F17DC61260012EFAB /* BMContactsViewController.m */,
+				03C5EB7117DC623B0012EFAB /* BMAddContactViewController.h */,
+				03C5EB7217DC623B0012EFAB /* BMAddContactViewController.m */,
+			);
+			name = Contacts;
 			sourceTree = "<group>";
 		};
 		58D96A1017DBB836003A6108 /* ZBarSDK */ = {
@@ -919,6 +968,12 @@
 				0375611117DBCC5500C36CD0 /* UAPushSettingsUserInfoView.xib in Resources */,
 				0375611217DBCC5500C36CD0 /* UAPushSettingsView.xib in Resources */,
 				03FD09FB17DBD45D009B6B86 /* BitMe.png in Resources */,
+				03C5EB5E17DC48560012EFAB /* logo.png in Resources */,
+				03C5EB6017DC525D0012EFAB /* blue.png in Resources */,
+				03C5EB6517DC54A20012EFAB /* 190-bank.png in Resources */,
+				03C5EB6617DC54A20012EFAB /* 190-bank@2x.png in Resources */,
+				03C5EB6717DC54A20012EFAB /* 192-credit-card.png in Resources */,
+				03C5EB6817DC54A20012EFAB /* 192-credit-card@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -962,6 +1017,9 @@
 				037560FF17DBCC5500C36CD0 /* UAPushSettingsUserInfoViewController.m in Sources */,
 				0375610017DBCC5500C36CD0 /* UAPushSettingsViewController.m in Sources */,
 				0375610117DBCC5500C36CD0 /* UAPushUI.m in Sources */,
+				03C5EB6C17DC60AE0012EFAB /* BMLogViewController.m in Sources */,
+				03C5EB7017DC61260012EFAB /* BMContactsViewController.m in Sources */,
+				03C5EB7317DC623B0012EFAB /* BMAddContactViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

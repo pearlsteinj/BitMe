@@ -13,7 +13,7 @@
 @end
 
 @implementation BMSendViewController
-@synthesize UID, amount;
+@synthesize UID, amount,address;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,8 +28,17 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    UIColor* mainColor = [UIColor colorWithRed:52.0/255 green:73.0/255 blue:100.0/255 alpha:1.0f];
+    UIColor* secondaryColor = [UIColor colorWithRed:22.0/255 green:160.0/255 blue:133.0/255 alpha:1.0f];
+    NSString* fontName = @"Avenir-Book";
+    NSString* boldFontName = @"Avenir-Black";
+    
+    self.view.backgroundColor = mainColor;
+    self.navigationController.navigationBar.tintColor = secondaryColor;
 }
-
+-(void)viewWillAppear:(BOOL)animated{
+    self.UID.text = self.address;
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -83,32 +92,46 @@
     }];
 }
 
+
+
+
+
+
+- (void)connection:(NSURLConnection *)connection willSendRequestForAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge{
+    if([challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodHTTPBasic]) {
+        NSURLCredential * credential = [[NSURLCredential alloc] initWithUser:@"NGKir7QlSImvdr_wUNfpyA" password:@"kGHChRScQBS6lSEczqsIhA" persistence:NSURLCredentialPersistenceForSession];
+        [[challenge sender] useCredential:credential forAuthenticationChallenge:challenge];
+    }
+}
+
+
+
+
+
+
+
 -(void)sendPush{
     
     //This feels right and gets a status 200. Why is it not doing anything????
     
     
-    NSURL *aUrl = [NSURL URLWithString:@"https://go.urbanairship.com/api/push/broadcast/?message=one&audience=all&device_types=all"];
-    
-NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:aUrl
-                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
-                                                       timeoutInterval:60.0];
+    NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://go.urbanairship.com/api/push/"]];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     
     NSDictionary *tmp = [[NSDictionary alloc] initWithObjectsAndKeys:
-                        @"all",  @"audience",
-                        @"onepingandonepingonlyplease", @"message",
-                        @"all", @"device_types",
+                         @"all",  @"audience",
+                         @"\"alert\" : \"Hi from Urban Airship!\"", @"notification",
+                         @"all", @"device_types",
                          nil];
-    NSError *error;
-    [request setHTTPMethod:@"POST"];
-    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    NSData *postdata = [NSJSONSerialization dataWithJSONObject:tmp options:0 error:&error];
-    [request setHTTPBody:postdata];
-    NSURLConnection *connection= [[NSURLConnection alloc] initWithRequest:request
-                                                                 delegate:self];
-    [connection start];
     
+    NSError *error;
+    NSData *postdata = [NSJSONSerialization dataWithJSONObject:tmp options:0 error:&error];
+    
+    [request setHTTPBody:postdata];
+    NSURLCredential *credential = [[NSURLCredential alloc] initWithUser:@"NGKir7QlSImvdr_wUNfpyA" password:@"kGHChRScQBS6lSEczqsIhA" persistence:NSURLCredentialPersistenceForSession];
+    
+    [NSURLConnection connectionWithRequest:request delegate:self];
     /*
     NSURL *aUrl = [NSURL URLWithString:@"https://go.urbanairship.com/api/push/"];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:aUrl
@@ -148,25 +171,6 @@ NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:aUrl
     [NSURLConnection connectionWithRequest:request delegate:self];
  */
 }
-- (NSString *)stringOutputForDictionary:(NSDictionary *)inputDict {
-    NSMutableString * outputString = [NSMutableString stringWithCapacity:256];
-    
-    NSArray * allKeys = [inputDict allKeys];
-    
-    for (NSString * key in allKeys) {
-        if ([[inputDict objectForKey:key] isKindOfClass:[NSDictionary class]]) {
-            [outputString appendString: [self stringOutputForDictionary: (NSDictionary *)inputDict]];
-        }
-        else {
-            [outputString appendString: key];
-            [outputString appendString: @": "];
-            [outputString appendString: [[inputDict objectForKey: key] description]];
-        }
-        [outputString appendString: @"\n"];
-    }
-    
-    return [NSString stringWithString: outputString];
-}
 
 - (void) connection:(NSURLConnection *) connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *) challenge {
     if([challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodHTTPBasic]) {
@@ -192,5 +196,8 @@ NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:aUrl
         // start recieving data
     }
     
+}
+-(void)setAddressField:(NSString *)UID{
+    self.address = UID;
 }
 @end

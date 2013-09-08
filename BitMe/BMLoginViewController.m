@@ -28,6 +28,13 @@
     [super viewDidLoad];
     
     
+    UIColor* mainColor = [UIColor colorWithRed:52.0/255 green:73.0/255 blue:100.0/255 alpha:1.0f];
+    
+    NSString* fontName = @"Avenir-Book";
+    NSString* boldFontName = @"Avenir-Black";
+    
+    self.view.backgroundColor = mainColor;
+    
     //Initializing Firebase
     Firebase* ref = [[Firebase alloc] initWithUrl:@"https://bitme.firebaseIO.com"];
     _authClient = [[FirebaseSimpleLogin alloc] initWithRef:ref];

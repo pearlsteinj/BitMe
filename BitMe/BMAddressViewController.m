@@ -32,10 +32,22 @@
     [ref observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         _address = [[snapshot.value objectForKey:user] objectForKey:@"address"];
         [myAddress setText:_address];
+        [myAddress setTextColor:[UIColor whiteColor]];
+        [myAddress setFont:[UIFont fontWithName:@"Cochin" size:13.5]];
+        [myAddress setTextAlignment:NSTextAlignmentCenter];
         _bal = [[snapshot.value objectForKey:user] objectForKey:@"balance"];
         [balance setText:_bal];
+        [balance setTextColor:[UIColor whiteColor]];
+
     }];
     [super viewDidLoad];
+    UIColor* mainColor = [UIColor colorWithRed:52.0/255 green:73.0/255 blue:100.0/255 alpha:1.0f];
+    UIColor* secondaryColor = [UIColor colorWithRed:22.0/255 green:160.0/255 blue:133.0/255 alpha:1.0f];
+    NSString* fontName = @"Avenir-Book";
+    NSString* boldFontName = @"Avenir-Black";
+    
+    self.view.backgroundColor = mainColor;
+    self.navigationController.navigationBar.tintColor = secondaryColor;
 	// Do any additional setup after loading the view.
 }
 
@@ -49,6 +61,8 @@
     NSString *copyStringverse = [[NSString alloc] initWithFormat:@"%@",_address];
     UIPasteboard *pb = [UIPasteboard generalPasteboard];
     [pb setString:copyStringverse];
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Success!" message:@"Address Copied to Clipboard." delegate:self cancelButtonTitle:@"Okay." otherButtonTitles:nil];
+    [alert show];
 }
 
 - (IBAction)refreshBalance:(id)sender {
@@ -88,6 +102,7 @@
         _old_bal = [[snapshot.value objectForKey:user] objectForKey:@"old_amount"];
         _bal = [[snapshot.value objectForKey:user] objectForKey:@"balance"];
         [balance setText:_bal];
+        [balance setTextColor:[UIColor whiteColor]];
         float balFloat = [_bal floatValue];
         float new_bal = [totalBalance floatValue]/100000000;
         float original = [_old_bal floatValue];
