@@ -13,9 +13,23 @@
 
 @implementation BMAppDelegate
 
+- (void)application:(UIApplication *)application
+didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    // Store the deviceToken in the current Installation and save it to Parse.
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation setDeviceTokenFromData:deviceToken];
+    [currentInstallation saveInBackground];
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    [Parse setApplicationId:@"bBKZB0VDDNvDznNiQHls6lPAalddrOY4XwbAhQvQ"
+                  clientKey:@"8GWI5URm2vvw8O18FIU02ddKjNPj0FspH1htGKQa"];
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
         UAConfig *config = [UAConfig defaultConfig];
             [UAirship takeOff:config];
     [UAPush shared].notificationTypes = (UIRemoteNotificationTypeBadge |

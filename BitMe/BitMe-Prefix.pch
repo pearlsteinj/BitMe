@@ -13,4 +13,5 @@
     #import <Foundation/Foundation.h>
     #import <Firebase/Firebase.h>
     #import <FirebaseSimpleLogin/FirebaseSimpleLogin.h>
+#import <Parse/Parse.h>
 #endif

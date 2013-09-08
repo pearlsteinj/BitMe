@@ -56,7 +56,7 @@
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Uh-Oh" message:@"You is poor :(" delegate:self cancelButtonTitle:@"I'm a beggar beholden" otherButtonTitles:nil];
             [alert show];
         }
-        else if (![snapshot.value objectForKey:UID.text]){
+        else if (![snapshot.value objectForKey:UID.text] || [[prefs objectForKey:@"UID"] isEqual:UID.text]){
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Uh-Oh" message:@"You is lonely :(" delegate:self cancelButtonTitle:@"Do not pass go, you lonely bastard" otherButtonTitles:nil];
             [alert show];
         }
@@ -76,17 +76,25 @@
                 } else if (user == nil) {
                 }
                 else{
-                    NSString *url = [NSString stringWithFormat:@"http://www.sendgrid.com/api/mail.send.json?to=peterbbryan%%40gmail.com&toname=user&from=%@&fromname=BitMe&subject=You%%20received%%20BitCoins,%%20congratulations!&text=You%%20have%%20received%%20a%%20payment%%20of%%20%@&api_user=peterbbryan&api_key=walletBlock", user.email, amount.text];
+                    NSString *url = [NSString stringWithFormat:@"http://www.sendgrid.com/api/mail.send.json?to=%@&toname=user&from=peterbbryan%%40gmail.com&fromname=BitMe&subject=You%%20received%%20BitCoins,%%20congratulations!&text=You%%20have%%20received%%20a%%20payment%%20of%%20%@&api_user=peterbbryan&api_key=walletBlock", user.email, amount.text];
                     NSURLRequest *theRequest=[NSURLRequest requestWithURL:[NSURL URLWithString:url]
                                                               cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                           timeoutInterval:60.0];
                     // create the connection with the request
                     // and start loading the data
                     NSURLConnection *theConnection=[[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
+                    
+                    [PFPush sendPushMessageToChannelInBackground:[@"a" stringByAppendingString: UID.text] withMessage:@"You have received a payment in BitMe!"];
+                   
+                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Sent!" message:@"BitCoins were succesfully transferred!" delegate:self cancelButtonTitle:@"OK!" otherButtonTitles:nil, nil];
+                    [alertView show];
+                    
                 }
             }];
          
-            [self sendPush];
+            //[self sendPush];
+            
+            
             
         }
     }];

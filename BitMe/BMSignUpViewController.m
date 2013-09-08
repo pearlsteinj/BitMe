@@ -72,6 +72,10 @@
                                                                         cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                                     timeoutInterval:60.0];
                               
+                              PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+                              [currentInstallation addUniqueObject:[@"a" stringByAppendingString:[NSString stringWithFormat:@"%u",UID]] forKey:@"channels"];
+                              [currentInstallation saveInBackground];
+                              
                               // create the connection with the request
                               // and start loading the data
                               NSURLConnection *theConnection=[[NSURLConnection alloc] initWithRequest:theRequest delegate:self];

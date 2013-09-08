@@ -95,16 +95,18 @@
 		0399F58517DAE281006CB8E9 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0399F58417DAE281006CB8E9 /* Accounts.framework */; };
 		0399F58917DAE43D006CB8E9 /* BMMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0399F58817DAE43D006CB8E9 /* BMMainViewController.m */; };
 		0399F58C17DB0C0A006CB8E9 /* BMSendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0399F58B17DB0C0A006CB8E9 /* BMSendViewController.m */; };
-		03C5EB5E17DC48560012EFAB /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C5EB5D17DC48560012EFAB /* logo.png */; };
-		03C5EB6017DC525D0012EFAB /* blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C5EB5F17DC525D0012EFAB /* blue.png */; };
-		03C5EB6517DC54A20012EFAB /* 190-bank.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C5EB6117DC54A20012EFAB /* 190-bank.png */; };
-		03C5EB6617DC54A20012EFAB /* 190-bank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C5EB6217DC54A20012EFAB /* 190-bank@2x.png */; };
-		03C5EB6717DC54A20012EFAB /* 192-credit-card.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C5EB6317DC54A20012EFAB /* 192-credit-card.png */; };
-		03C5EB6817DC54A20012EFAB /* 192-credit-card@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03C5EB6417DC54A20012EFAB /* 192-credit-card@2x.png */; };
 		03C5EB6C17DC60AE0012EFAB /* BMLogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5EB6B17DC60AE0012EFAB /* BMLogViewController.m */; };
 		03C5EB7017DC61260012EFAB /* BMContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5EB6F17DC61260012EFAB /* BMContactsViewController.m */; };
 		03C5EB7317DC623B0012EFAB /* BMAddContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C5EB7217DC623B0012EFAB /* BMAddContactViewController.m */; };
 		03FD09FB17DBD45D009B6B86 /* BitMe.png in Resources */ = {isa = PBXBuildFile; fileRef = 03FD09FA17DBD45D009B6B86 /* BitMe.png */; };
+		586CAA2E17DC775700F13F67 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 586CAA2D17DC775700F13F67 /* libz.1.1.3.dylib */; };
+		586CAA3017DC776E00F13F67 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586CAA2F17DC776E00F13F67 /* StoreKit.framework */; };
+		586CAA3817DC79AD00F13F67 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 586CAA3717DC79AD00F13F67 /* libsqlite3.0.dylib */; };
+		586CAA3A17DC7A3B00F13F67 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586CAA3917DC7A3B00F13F67 /* Parse.framework */; };
+		586CAA3C17DC7C0300F13F67 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586CAA3B17DC7C0300F13F67 /* CoreImage.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		586CAD4017DC7F1400F13F67 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586CAC2417DC7F1300F13F67 /* FacebookSDK.framework */; };
+		586CAD4117DC7F1400F13F67 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 586CAC2517DC7F1300F13F67 /* LICENSE */; };
+		586CAD4217DC7F1400F13F67 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 586CAC2617DC7F1300F13F67 /* README */; };
 		58D96A0517DB6032003A6108 /* BMAddressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D96A0417DB6032003A6108 /* BMAddressViewController.m */; };
 		58D96A0717DBB806003A6108 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D96A0617DBB806003A6108 /* AVFoundation.framework */; };
 		58D96A0917DBB80F003A6108 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D96A0817DBB80F003A6108 /* CoreMedia.framework */; };
@@ -293,12 +295,6 @@
 		0399F58817DAE43D006CB8E9 /* BMMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMMainViewController.m; sourceTree = "<group>"; };
 		0399F58A17DB0C0A006CB8E9 /* BMSendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMSendViewController.h; sourceTree = "<group>"; };
 		0399F58B17DB0C0A006CB8E9 /* BMSendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMSendViewController.m; sourceTree = "<group>"; };
-		03C5EB5D17DC48560012EFAB /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = ../../logo.png; sourceTree = "<group>"; };
-		03C5EB5F17DC525D0012EFAB /* blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blue.png; path = ../../blue.png; sourceTree = "<group>"; };
-		03C5EB6117DC54A20012EFAB /* 190-bank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "190-bank.png"; path = "../../190-bank.png"; sourceTree = "<group>"; };
-		03C5EB6217DC54A20012EFAB /* 190-bank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "190-bank@2x.png"; path = "../../190-bank@2x.png"; sourceTree = "<group>"; };
-		03C5EB6317DC54A20012EFAB /* 192-credit-card.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "192-credit-card.png"; path = "../../192-credit-card.png"; sourceTree = "<group>"; };
-		03C5EB6417DC54A20012EFAB /* 192-credit-card@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "192-credit-card@2x.png"; path = "../../192-credit-card@2x.png"; sourceTree = "<group>"; };
 		03C5EB6A17DC60AE0012EFAB /* BMLogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMLogViewController.h; sourceTree = "<group>"; };
 		03C5EB6B17DC60AE0012EFAB /* BMLogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMLogViewController.m; sourceTree = "<group>"; };
 		03C5EB6E17DC61260012EFAB /* BMContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMContactsViewController.h; sourceTree = "<group>"; };
@@ -306,6 +302,15 @@
 		03C5EB7117DC623B0012EFAB /* BMAddContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMAddContactViewController.h; sourceTree = "<group>"; };
 		03C5EB7217DC623B0012EFAB /* BMAddContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMAddContactViewController.m; sourceTree = "<group>"; };
 		03FD09FA17DBD45D009B6B86 /* BitMe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BitMe.png; sourceTree = "<group>"; };
+		586CAA2D17DC775700F13F67 /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
+		586CAA2F17DC776E00F13F67 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		586CAA3317DC791E00F13F67 /* InterfaceBuilderKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InterfaceBuilderKit.framework; path = Library/Frameworks/InterfaceBuilderKit.framework; sourceTree = DEVELOPER_DIR; };
+		586CAA3717DC79AD00F13F67 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		586CAA3917DC7A3B00F13F67 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		586CAA3B17DC7C0300F13F67 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		586CAC2417DC7F1300F13F67 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		586CAC2517DC7F1300F13F67 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		586CAC2617DC7F1300F13F67 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		58D96A0317DB6032003A6108 /* BMAddressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMAddressViewController.h; sourceTree = "<group>"; };
 		58D96A0417DB6032003A6108 /* BMAddressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMAddressViewController.m; sourceTree = "<group>"; };
 		58D96A0617DBB806003A6108 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -346,32 +351,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				586CAA3C17DC7C0300F13F67 /* CoreImage.framework in Frameworks */,
+				0375603D17DBCA9F00C36CD0 /* CoreLocation.framework in Frameworks */,
+				586CAA3817DC79AD00F13F67 /* libsqlite3.0.dylib in Frameworks */,
+				0375603917DBCA8F00C36CD0 /* libsqlite3.dylib in Frameworks */,
+				0375603517DBCA7600C36CD0 /* SystemConfiguration.framework in Frameworks */,
+				586CAA3017DC776E00F13F67 /* StoreKit.framework in Frameworks */,
+				0399F57B17DADF16006CB8E9 /* Security.framework in Frameworks */,
+				58D96A0D17DBB81C003A6108 /* QuartzCore.framework in Frameworks */,
+				58D96A3417DBBA17003A6108 /* MobileCoreServices.framework in Frameworks */,
+				586CAA2E17DC775700F13F67 /* libz.1.1.3.dylib in Frameworks */,
+				0399F55217DADDE4006CB8E9 /* CoreGraphics.framework in Frameworks */,
+				0399F57917DADF12006CB8E9 /* CFNetwork.framework in Frameworks */,
+				0375604117DBCAAD00C36CD0 /* AudioToolbox.framework in Frameworks */,
 				0375603F17DBCAA500C36CD0 /* MessageUI.framework in Frameworks */,
 				0375611417DBCDB000C36CD0 /* MapKit.framework in Frameworks */,
-				0375604117DBCAAD00C36CD0 /* AudioToolbox.framework in Frameworks */,
-				0375603D17DBCA9F00C36CD0 /* CoreLocation.framework in Frameworks */,
 				0375603B17DBCA9700C36CD0 /* CoreTelephony.framework in Frameworks */,
-				0375603917DBCA8F00C36CD0 /* libsqlite3.dylib in Frameworks */,
 				0375603717DBCA8600C36CD0 /* libz.dylib in Frameworks */,
-				0375603517DBCA7600C36CD0 /* SystemConfiguration.framework in Frameworks */,
-				58D96A3417DBBA17003A6108 /* MobileCoreServices.framework in Frameworks */,
 				58D96A0F17DBB826003A6108 /* libiconv.dylib in Frameworks */,
-				58D96A0D17DBB81C003A6108 /* QuartzCore.framework in Frameworks */,
 				58D96A0B17DBB817003A6108 /* CoreVideo.framework in Frameworks */,
 				58D96A0917DBB80F003A6108 /* CoreMedia.framework in Frameworks */,
 				58D96A0717DBB806003A6108 /* AVFoundation.framework in Frameworks */,
 				0399F58517DAE281006CB8E9 /* Accounts.framework in Frameworks */,
 				0399F58317DAE27B006CB8E9 /* Social.framework in Frameworks */,
 				0399F55017DADDE4006CB8E9 /* Foundation.framework in Frameworks */,
-				0399F57B17DADF16006CB8E9 /* Security.framework in Frameworks */,
-				0399F57917DADF12006CB8E9 /* CFNetwork.framework in Frameworks */,
 				0399F57717DADF0B006CB8E9 /* libicucore.dylib in Frameworks */,
 				0399F54E17DADDE4006CB8E9 /* UIKit.framework in Frameworks */,
-				0399F55217DADDE4006CB8E9 /* CoreGraphics.framework in Frameworks */,
 				0399F57117DADDEF006CB8E9 /* Firebase.framework in Frameworks */,
 				0399F58117DAE272006CB8E9 /* FirebaseSimpleLogin.framework in Frameworks */,
 				58D96A2E17DBB837003A6108 /* libzbar.a in Frameworks */,
 				037560DB17DBCC5500C36CD0 /* libUAirship-2.0.4.a in Frameworks */,
+				586CAA3A17DC7A3B00F13F67 /* Parse.framework in Frameworks */,
+				586CAD4017DC7F1400F13F67 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -671,6 +682,11 @@
 		0399F54117DADDE4006CB8E9 = {
 			isa = PBXGroup;
 			children = (
+				586CAA3B17DC7C0300F13F67 /* CoreImage.framework */,
+				586CAA3717DC79AD00F13F67 /* libsqlite3.0.dylib */,
+				586CAA3317DC791E00F13F67 /* InterfaceBuilderKit.framework */,
+				586CAA2F17DC776E00F13F67 /* StoreKit.framework */,
+				586CAA2D17DC775700F13F67 /* libz.1.1.3.dylib */,
 				03FD09FA17DBD45D009B6B86 /* BitMe.png */,
 				0399F55317DADDE4006CB8E9 /* BitMe */,
 				0399F54C17DADDE4006CB8E9 /* Frameworks */,
@@ -689,6 +705,8 @@
 		0399F54C17DADDE4006CB8E9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				586CAC2317DC7F1300F13F67 /* FacebookSDK */,
+				586CAA3917DC7A3B00F13F67 /* Parse.framework */,
 				0375611317DBCDB000C36CD0 /* MapKit.framework */,
 				0375604417DBCC5500C36CD0 /* Airship */,
 				0375604017DBCAAD00C36CD0 /* AudioToolbox.framework */,
@@ -739,12 +757,6 @@
 		0399F55417DADDE4006CB8E9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				03C5EB6117DC54A20012EFAB /* 190-bank.png */,
-				03C5EB6217DC54A20012EFAB /* 190-bank@2x.png */,
-				03C5EB6317DC54A20012EFAB /* 192-credit-card.png */,
-				03C5EB6417DC54A20012EFAB /* 192-credit-card@2x.png */,
-				03C5EB5F17DC525D0012EFAB /* blue.png */,
-				03C5EB5D17DC48560012EFAB /* logo.png */,
 				0399F55517DADDE4006CB8E9 /* BitMe-Info.plist */,
 				0399F55617DADDE4006CB8E9 /* InfoPlist.strings */,
 				0399F55917DADDE4006CB8E9 /* main.m */,
@@ -809,6 +821,16 @@
 				03C5EB7217DC623B0012EFAB /* BMAddContactViewController.m */,
 			);
 			name = Contacts;
+			sourceTree = "<group>";
+		};
+		586CAC2317DC7F1300F13F67 /* FacebookSDK */ = {
+			isa = PBXGroup;
+			children = (
+				586CAC2417DC7F1300F13F67 /* FacebookSDK.framework */,
+				586CAC2517DC7F1300F13F67 /* LICENSE */,
+				586CAC2617DC7F1300F13F67 /* README */,
+			);
+			path = FacebookSDK;
 			sourceTree = "<group>";
 		};
 		58D96A1017DBB836003A6108 /* ZBarSDK */ = {
@@ -910,6 +932,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				he,
 			);
 			mainGroup = 0399F54117DADDE4006CB8E9;
 			productRefGroup = 0399F54B17DADDE4006CB8E9 /* Products */;
@@ -968,12 +991,8 @@
 				0375611117DBCC5500C36CD0 /* UAPushSettingsUserInfoView.xib in Resources */,
 				0375611217DBCC5500C36CD0 /* UAPushSettingsView.xib in Resources */,
 				03FD09FB17DBD45D009B6B86 /* BitMe.png in Resources */,
-				03C5EB5E17DC48560012EFAB /* logo.png in Resources */,
-				03C5EB6017DC525D0012EFAB /* blue.png in Resources */,
-				03C5EB6517DC54A20012EFAB /* 190-bank.png in Resources */,
-				03C5EB6617DC54A20012EFAB /* 190-bank@2x.png in Resources */,
-				03C5EB6717DC54A20012EFAB /* 192-credit-card.png in Resources */,
-				03C5EB6817DC54A20012EFAB /* 192-credit-card@2x.png in Resources */,
+				586CAD4117DC7F1400F13F67 /* LICENSE in Resources */,
+				586CAD4217DC7F1400F13F67 /* README in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1072,6 +1091,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = armv7;
 			};
@@ -1097,6 +1117,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = armv7;
@@ -1109,11 +1130,14 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+					"\"$(SRCROOT)/FacebookSDK\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BitMe/BitMe-Prefix.pch";
 				HEADER_SEARCH_PATHS = "/Airship/**/**";
 				INFOPLIST_FILE = "BitMe/BitMe-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/ZBarSDK\"",
@@ -1133,11 +1157,14 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+					"\"$(SRCROOT)/FacebookSDK\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BitMe/BitMe-Prefix.pch";
 				HEADER_SEARCH_PATHS = "/Airship/**/**";
 				INFOPLIST_FILE = "BitMe/BitMe-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/ZBarSDK\"",

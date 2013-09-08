@@ -55,6 +55,7 @@
                    [alert show];
                } else {
                    [self dismissViewControllerAnimated:YES completion:nil];
+                   //HERE
                }
            }];
     
