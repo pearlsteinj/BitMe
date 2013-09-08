@@ -12,6 +12,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *UID;
 @property (strong, nonatomic) IBOutlet UITextField *amount;
 @property (nonatomic, retain) FAUser *user;
+@property (strong, nonatomic) IBOutlet UITextField *message;
 @property (nonatomic,retain) NSString *address;
 - (IBAction)send:(id)sender;
 -(void)setAddressField:(NSString *)UID;

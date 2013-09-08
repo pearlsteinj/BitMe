@@ -13,7 +13,7 @@
 @end
 
 @implementation BMLogViewController
-
+@synthesize entries,tableView,top_bar;
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -25,15 +25,30 @@
 
 - (void)viewDidLoad
 {
+    UIColor* secondaryColor = [UIColor colorWithRed:22.0/255 green:160.0/255 blue:133.0/255 alpha:1.0f];
+    top_bar.tintColor = secondaryColor;
+    
+    Firebase* ref = [[Firebase alloc] initWithUrl:@"https://bitme.firebaseIO.com/log"];
+    __block NSDictionary *dict = nil;
+    [ref observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        dict = snapshot.value;
+        entries = [[NSDictionary alloc]initWithDictionary:dict copyItems:YES];
+        self.tableView.delegate = self;
+        self.tableView.dataSource = self;
+        [self.tableView reloadData];
+    }];
     [super viewDidLoad];
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
-
+-(void)viewWillAppear:(BOOL)animated{
+    Firebase *ref = [[Firebase alloc] initWithUrl:@"https://bitme.firebaseIO.com/log"];
+    
+    __block NSDictionary *dict = nil;
+    [ref observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        dict = snapshot.value;
+        entries = [[NSDictionary alloc]initWithDictionary:dict copyItems:YES];
+    }];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -44,78 +59,65 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    NSLog(@"%x",[[entries allKeys]count]);
+    return [[entries allKeys]count];
 }
-
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 83;
+}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    NSDictionary *dict = entries[[entries allKeys][indexPath.row]];
+    NSLog(@"%x",[[dict allKeys]count]);
+    if (cell == nil) {
+        // Create the cell and add the labels
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        UILabel *from = [[UILabel alloc] initWithFrame:CGRectMake( 0.0f, 0.0f, 120.0f, 44.0f)];
+        from.tag = 1; // We use the tag to set it later
     
-    // Configure the cell...
+        UILabel *to = [[UILabel alloc] init];
+        to.tag = 2; // We use the tag to set it later
+        
+        UILabel *amount = [[UILabel alloc]init];
+        amount.tag = 3;
+        
+        UILabel *message = [[UILabel alloc]init];
+        message.tag = 4;
+    
+        [cell.contentView addSubview:from];
+        [cell.contentView addSubview:to];
+        [cell.contentView addSubview:amount];
+        [cell.contentView addSubview:message];
+    }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
+    UILabel *from = (UILabel *)[cell viewWithTag:1];
+    from.text = dict[@"sender"];
+    UILabel *to = (UILabel *)[cell viewWithTag:2];
+    to.text = dict[@"reciever"];
+    UILabel *amount = (UILabel *)[cell viewWithTag:3];
+    amount.text = dict[@"amount"];
+    UILabel *message = (UILabel *)[cell viewWithTag:4];
+    message.text = dict[@"message"];
     
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+
 }
 
 @end

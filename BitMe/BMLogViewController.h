@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BMLogViewController : UITableViewController
-
+@interface BMLogViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
+@property (strong, nonatomic) IBOutlet UINavigationBar *top_bar;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic,retain) NSDictionary *entries; 
 @end

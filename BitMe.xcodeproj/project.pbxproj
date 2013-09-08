@@ -301,6 +301,8 @@
 		03C5EB6F17DC61260012EFAB /* BMContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMContactsViewController.m; sourceTree = "<group>"; };
 		03C5EB7117DC623B0012EFAB /* BMAddContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMAddContactViewController.h; sourceTree = "<group>"; };
 		03C5EB7217DC623B0012EFAB /* BMAddContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMAddContactViewController.m; sourceTree = "<group>"; };
+		03F9CEF917DC9BE300025D64 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		03F9CEFA17DC9BE300025D64 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
 		03FD09FA17DBD45D009B6B86 /* BitMe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BitMe.png; sourceTree = "<group>"; };
 		586CAA2D17DC775700F13F67 /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
 		586CAA2F17DC776E00F13F67 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -682,11 +684,6 @@
 		0399F54117DADDE4006CB8E9 = {
 			isa = PBXGroup;
 			children = (
-				586CAA3B17DC7C0300F13F67 /* CoreImage.framework */,
-				586CAA3717DC79AD00F13F67 /* libsqlite3.0.dylib */,
-				586CAA3317DC791E00F13F67 /* InterfaceBuilderKit.framework */,
-				586CAA2F17DC776E00F13F67 /* StoreKit.framework */,
-				586CAA2D17DC775700F13F67 /* libz.1.1.3.dylib */,
 				03FD09FA17DBD45D009B6B86 /* BitMe.png */,
 				0399F55317DADDE4006CB8E9 /* BitMe */,
 				0399F54C17DADDE4006CB8E9 /* Frameworks */,
@@ -705,6 +702,11 @@
 		0399F54C17DADDE4006CB8E9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				586CAA3B17DC7C0300F13F67 /* CoreImage.framework */,
+				586CAA3717DC79AD00F13F67 /* libsqlite3.0.dylib */,
+				586CAA3317DC791E00F13F67 /* InterfaceBuilderKit.framework */,
+				586CAA2F17DC776E00F13F67 /* StoreKit.framework */,
+				586CAA2D17DC775700F13F67 /* libz.1.1.3.dylib */,
 				586CAC2317DC7F1300F13F67 /* FacebookSDK */,
 				586CAA3917DC7A3B00F13F67 /* Parse.framework */,
 				0375611317DBCDB000C36CD0 /* MapKit.framework */,
@@ -757,6 +759,8 @@
 		0399F55417DADDE4006CB8E9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				03F9CEF917DC9BE300025D64 /* TPKeyboardAvoidingScrollView.h */,
+				03F9CEFA17DC9BE300025D64 /* TPKeyboardAvoidingScrollView.m */,
 				0399F55517DADDE4006CB8E9 /* BitMe-Info.plist */,
 				0399F55617DADDE4006CB8E9 /* InfoPlist.strings */,
 				0399F55917DADDE4006CB8E9 /* main.m */,

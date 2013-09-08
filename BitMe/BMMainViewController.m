@@ -40,7 +40,6 @@
     Firebase* ref = [[Firebase alloc] initWithUrl:@"https://bitme.firebaseIO.com"];
     FirebaseSimpleLogin* authClient = [[FirebaseSimpleLogin alloc] initWithRef:ref];
     //Check for Account
-    NSLog(@"HERE");
     [authClient checkAuthStatusWithBlock:^(NSError* error, FAUser* user) {
         if (error != nil) {
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Uh-Oh" message:@"Something Bad Happened :(" delegate:self cancelButtonTitle:@"Ok!!! I forgive you" otherButtonTitles:nil];

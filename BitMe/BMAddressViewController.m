@@ -118,4 +118,11 @@
         
     }];
 }
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    UITouch * touch = [touches anyObject];
+    if(touch.phase == UITouchPhaseBegan) {
+        [myAddress resignFirstResponder];
+        [balance resignFirstResponder];
+}
+}
 @end

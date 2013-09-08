@@ -13,7 +13,7 @@
 @end
 
 @implementation BMSendViewController
-@synthesize UID, amount,address;
+@synthesize UID,amount,address;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -49,6 +49,16 @@
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     NSString *user = [prefs objectForKey:@"UID"];
     NSString *url = @"https://bitme.firebaseIO.com/users";
+    NSString *url2 = @"https://bitme.firebaseIO.com/";
+    Firebase *log = [[Firebase alloc]initWithUrl:url2];
+    log = [log childByAppendingPath:@"log"];
+    Firebase *transaction = [log childByAutoId];
+    
+    [[transaction childByAppendingPath:@"sender"] setValue:user];
+    [[transaction childByAppendingPath:@"reciever"] setValue:UID.text];
+    [[transaction childByAppendingPath:@"message"] setValue:_message.text];
+    [[transaction childByAppendingPath:@"amount"] setValue:amount.text];
+
     Firebase* lookup = [[Firebase alloc] initWithUrl:url];
     [lookup observeSingleEventOfType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         NSString *priorBalance = [[snapshot.value objectForKey:user] objectForKey:@"balance"];
@@ -84,7 +94,12 @@
                     // and start loading the data
                     NSURLConnection *theConnection=[[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
                     
-                    [PFPush sendPushMessageToChannelInBackground:[@"a" stringByAppendingString: UID.text] withMessage:@"You have received a payment in BitMe!"];
+                    
+                    NSString *msg = @"You have recieved ";
+                    msg = [msg stringByAppendingFormat:@"%@",amount.text];
+                    msg = [msg stringByAppendingFormat:@" for : "];
+                    msg = [msg stringByAppendingFormat:@"%@",_message.text];
+                    [PFPush sendPushMessageToChannelInBackground:[@"a" stringByAppendingString: UID.text] withMessage:msg];
                    
                     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Sent!" message:@"BitCoins were succesfully transferred!" delegate:self cancelButtonTitle:@"OK!" otherButtonTitles:nil, nil];
                     [alertView show];
@@ -207,5 +222,13 @@
 }
 -(void)setAddressField:(NSString *)UID{
     self.address = UID;
+}
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    UITouch * touch = [touches anyObject];
+    if(touch.phase == UITouchPhaseBegan) {
+        [amount resignFirstResponder];
+        [_message resignFirstResponder];
+        [UID resignFirstResponder];
+    }
 }
 @end

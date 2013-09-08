@@ -31,7 +31,6 @@
     __block NSDictionary *dict = nil;
     [fuser observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         dict = snapshot.value;
-        NSLog(@"%@",[dict allKeys][0]);
         contacts = [[NSDictionary alloc]initWithDictionary:dict copyItems:YES];
     }];    
 }
@@ -45,12 +44,13 @@
     __block NSDictionary *dict = nil;
     [fuser observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         dict = snapshot.value;
-        NSLog(@"%@",[dict allKeys][0]);
+        if(dict != nil){
         contacts = [[NSDictionary alloc]initWithDictionary:dict copyItems:YES];
+        }
+        self.tableView.delegate = self;
+        self.tableView.dataSource = self;
+        [self.tableView reloadData];
     }];
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    
     [super viewDidLoad];
 
 }
@@ -72,8 +72,12 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    NSLog(@"%x",[[contacts allKeys] count]);
+    if(contacts != nil){
     return [[contacts allKeys] count];
+    }
+    else{
+        return 0;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
