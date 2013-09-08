@@ -56,18 +56,8 @@
             // Sorry for the scrappy work
             [[[lookup childByAppendingPath:user] childByAppendingPath:@"balance" ] setValue:[NSString stringWithFormat:@"%f", ([priorBalance floatValue] - [amount.text floatValue])]];
             [[[lookup childByAppendingPath:UID.text] childByAppendingPath:@"balance" ] setValue:[NSString stringWithFormat:@"%f", ([[[snapshot.value objectForKey:UID.text] objectForKey:@"balance"] floatValue] + [amount.text floatValue])]];
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-            [self sendPush];
-=======
-=======
->>>>>>> d2e19ce7d06deab04e8277ad84bf2a67e1162f43
-=======
->>>>>>> d2e19ce7d06deab04e8277ad84bf2a67e1162f43
-            
-            
-            
+
+
             Firebase* ref = [[Firebase alloc] initWithUrl:@"https://bitme.firebaseIO.com"];
             FirebaseSimpleLogin* authClient = [[FirebaseSimpleLogin alloc] initWithRef:ref];
             
@@ -86,21 +76,53 @@
                     NSURLConnection *theConnection=[[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
                 }
             }];
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> d2e19ce7d06deab04e8277ad84bf2a67e1162f43
-=======
->>>>>>> d2e19ce7d06deab04e8277ad84bf2a67e1162f43
-=======
->>>>>>> d2e19ce7d06deab04e8277ad84bf2a67e1162f43
+         
+            [self sendPush];
+            
         }
     }];
 }
 
 -(void)sendPush{
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+    
+    //This feels right and gets a status 200. Why is it not doing anything????
+    
+    
+    NSURL *aUrl = [NSURL URLWithString:@"https://go.urbanairship.com/api/push/broadcast/?message=one&audience=all&device_types=all"];
+    
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:aUrl
+                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                       timeoutInterval:60.0];
+    
+    NSDictionary *tmp = [[NSDictionary alloc] initWithObjectsAndKeys:
+                        @"all",  @"audience",
+                        @"onepingandonepingonlyplease", @"message",
+                        @"all", @"device_types",
+                         nil];
+    NSError *error;
+    [request setHTTPMethod:@"POST"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    NSData *postdata = [NSJSONSerialization dataWithJSONObject:tmp options:0 error:&error];
+    [request setHTTPBody:postdata];
+    NSURLConnection *connection= [[NSURLConnection alloc] initWithRequest:request
+                                                                 delegate:self];
+    [connection start];
+    
+    /*
+    NSURL *aUrl = [NSURL URLWithString:@"https://go.urbanairship.com/api/push/"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:aUrl
+                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                       timeoutInterval:60.0];
+    
+    NSURLConnection *connection= [[NSURLConnection alloc] initWithRequest:request
+                                                                 delegate:self];
+    [request setHTTPMethod:@"POST"];
+    NSString *postString = @"yourVarialbes=yourvalues";
+    [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
+    [connection start];
+    
+
     NSMutableURLRequest * request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://go.urbanairship.com/api/push/"]];
     [request setHTTPMethod:@"POST"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
@@ -124,6 +146,7 @@
     NSLog(@"%@",[self stringOutputForDictionary:pushdata]);
     [request setHTTPBody:temp];
     [NSURLConnection connectionWithRequest:request delegate:self];
+ */
 }
 - (NSString *)stringOutputForDictionary:(NSDictionary *)inputDict {
     NSMutableString * outputString = [NSMutableString stringWithCapacity:256];
@@ -144,25 +167,30 @@
     
     return [NSString stringWithString: outputString];
 }
+
 - (void) connection:(NSURLConnection *) connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *) challenge {
     if([challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodHTTPBasic]) {
         NSURLCredential * credential = [[NSURLCredential alloc] initWithUser:@"NGKir7QlSImvdr_wUNfpyA" password:@"kGHChRScQBS6lSEczqsIhA" persistence:NSURLCredentialPersistenceForSession];
         [[challenge sender] useCredential:credential forAuthenticationChallenge:challenge];
     }
-=======
-    
->>>>>>> d2e19ce7d06deab04e8277ad84bf2a67e1162f43
-=======
-    
->>>>>>> d2e19ce7d06deab04e8277ad84bf2a67e1162f43
-=======
-    
->>>>>>> d2e19ce7d06deab04e8277ad84bf2a67e1162f43
+
 }
 
 - (void) connection:(NSURLConnection *) connection didReceiveResponse:(NSURLResponse *) response {
     NSHTTPURLResponse * res = (NSHTTPURLResponse *) response;
     NSLog(@"response: %@",res);
     NSLog(@"res %i\n",res.statusCode);
+    NSLog([response description]);
+    
+    // cast the response to NSHTTPURLResponse so we can look for 404 etc
+    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+    
+    if ([httpResponse statusCode]) {
+        // do error handling here
+        NSLog(@"remote url returned error %d %@",[httpResponse statusCode],[NSHTTPURLResponse localizedStringForStatusCode:[httpResponse statusCode]]);
+    } else {
+        // start recieving data
+    }
+    
 }
 @end
